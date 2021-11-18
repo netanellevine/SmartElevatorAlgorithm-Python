@@ -1,0 +1,74 @@
+@startuml
+class Building {
++maxFloor: integer
++minFloor: integer
++elevators: elevators list
++__init__(self, elevators)
++sort_by_speed(self
++to_string(self)
+}
+
+
+class Elevator{
++startTime: float
++stopTime: float
++openTime: float
++closeTime: float
++maxFloor: integer
++minFloor: integer
++speed: float
++id: string
++pos: integer
++__init__(self, elevator)
++get_distance(self, src_floor, dest_floor)
++__str__(self)
+}
+
+
+class Call{
++runTime: float
++src: integer
++dest: integer
++status: integer
++allocatedTo: integer
++__init__(self, call)
++speed(self, elev)
++__str__(self)
+}
+
+
+class Calls{
++calls: Calls list
++length: integer
++__init__(self, calls)
+}
+
+
+class Reader{}
+class Ex1_main{}
+class Ex1_tester{}
+
+
+class MyAlgo {
++building: Building
++elevators: Elevator list
++routeUp: integer list of lists
++routeDown[[]]: integer list of lists
++calls: Calls list
++__init__(self,)
++allocateAnElevator(self, call)
+    }
+
+Building --> Elevator
+Building ---> MyAlgo
+Calls --> Call
+Calls ---> MyAlgo
+MyAlgo --> Ex1_main
+MyAlgo --> Ex1_tester
+Reader --> Calls
+Reader --> Building
+Reader --> Ex1_tester
+Reader <--> Ex1_main
+
+
+@endum
