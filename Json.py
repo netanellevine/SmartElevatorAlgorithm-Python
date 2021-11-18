@@ -1,6 +1,5 @@
 import csv
 import json
-
 import MyAlgo
 from Building import Building
 from Call import Call
@@ -23,15 +22,15 @@ def building_from_json(file_name):
 def calls_from_CSV(file_name):
     f = open(file_name)
     csv_reader = csv.reader(f)
-    li = []
+    list_of_calls = []
     for call in csv_reader:
-        li.append(Call(call))
-    return Calls(li)
+        list_of_calls.append(Call(call))
+    return Calls(list_of_calls)
 
 
-def write_to_csv(list_of_calls, ind):
+def write_to_csv(list_of_calls, file_name):
     # https://www.pythontutorial.net/python-basics/python-write-csv-file/
-    data = open("output" + str(ind) + ".csv", "w", newline='')
+    data = open(file_name, "x", newline='')
     writer = csv.writer(data)
     for i in list_of_calls.calls:
         li = [i.kind, i.runTime, i.src, i.dest, i.status, i.allocatedTo]

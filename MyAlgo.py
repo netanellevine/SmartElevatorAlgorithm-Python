@@ -8,7 +8,7 @@ def calculate_route(call, elev):
     dest_floor = call.dest
     starting_time = call.runTime
     # elev.curr_pos()
-    elev_pos = elev.whereAtTime(starting_time)
+    elev_pos = 0
     elev_state = elev.state
     estimated_time = 0
     ALLOCATE_STATE = 0
@@ -37,12 +37,12 @@ def calculate_route(call, elev):
     if call_type == 1:
         elev_route = elev.up.copy()
         # CASE 1 ->
-        if len(elev_route) == 0 and elev_pos < src_floor < dest_floor:
+        if len(elev_route) == 0 and (elev_pos < src_floor < dest_floor):
             # route is empty
             estimated_time = elev.get_distance(elev_pos, src_floor) + elev.get_distance(src_floor, dest_floor)
             ALLOCATE_STATE = 1
         # CASE 2 ->
-        elif len(elev_route) == 0 and elev_pos > src_floor < dest_floor:
+        elif len(elev_route) == 0 and (elev_pos > src_floor < dest_floor):
             last_pos = elev_pos
             elev_route = elev.down.copy()
             elev_route.append(src_floor)
@@ -56,7 +56,7 @@ def calculate_route(call, elev):
             ALLOCATE_STATE = 2
 
         # CASE 3 ->
-        elif len(elev_route) != 0 and elev_pos > src_floor < dest_floor:
+        elif len(elev_route) != 0 and (elev_pos > src_floor < dest_floor):
             # if the pos of the elev is grater then the src floor ->
             # first finish all the calls up
             # second start doing all the calls down and add the src floor
@@ -98,12 +98,12 @@ def calculate_route(call, elev):
     elif call_type == -1:
         elev_route = elev.down.copy()
         # CASE 5 ->
-        if len(elev_route) == 0 and elev_pos > src_floor > dest_floor:
+        if len(elev_route) == 0 and (elev_pos > src_floor > dest_floor):
             # route is empty
             estimated_time = elev.get_distance(elev_pos, src_floor) + elev.get_distance(src_floor, dest_floor)
             ALLOCATE_STATE = 5
         # CASE 6 ->
-        if len(elev_route) == 0 and elev_pos < src_floor > dest_floor:
+        if len(elev_route) == 0 and (elev_pos < src_floor > dest_floor):
             last_pos = elev_pos
             elev_route = elev.up.copy()
             elev_route.append(src_floor)
@@ -116,7 +116,7 @@ def calculate_route(call, elev):
             # + max(estimated_time * (len(elev_route) / 4), estimated_time)
             ALLOCATE_STATE = 6
         # CASE 7 ->
-        elif len(elev_route) != 0 and elev_pos < src_floor > dest_floor:
+        elif len(elev_route) != 0 and (elev_pos < src_floor > dest_floor):
             # if the pos of the elev is lower than the src
             # first finish all the calls down
             # second start doing all the calls up and add the src floor
@@ -159,6 +159,10 @@ class MyAlgo:
         self.elevators = building.elevators
         self.route_up = [[]] * len(self.elevators)
         self.route_down = [[]] * len(self.elevators)
+        self.ind = 0
+        self.should_wait = False
+        self.index = 1
+        self.bo=False
 
     # def allocate_an_elevator(self, call):
     #     call_type = 1 if call.src < call.dest else -1
@@ -215,13 +219,16 @@ class MyAlgo:
     def allocate_an_elevator(self, call):
         if len(self.building.elevators) == 1:
             return 0
-        call_type = 1 if call.src < call.dest else -1
-        src_floor = call.src
-        dest_floor = call.dest
-        max_floor = max(int(src_floor), int(dest_floor))
-        num_of_floors = abs(int(self.building.minFloor) - int(self.building.maxFloor))
-        num_of_elevators = len(self.building.elevators)
-        section_length = num_of_floors / int(num_of_elevators)
-        index_to_allocate = int(int(max_floor) / int(section_length))
-        id_of_allocated = self.building.elevators[index_to_allocate].id
-        return id_of_allocated
+        else:
+            call_type = 1 if call.src < call.dest else -1
+            src_floor = call.src
+            dest_floor = call.dest
+            max_floor = max(int(src_floor), int(dest_floor))
+            num_of_floors = abs(int(self.building.minFloor) - int(self.building.maxFloor))
+            num_of_elevators = len(self.building.elevators)
+            section_length = num_of_floors / int(num_of_elevators)
+            index_to_allocate = int(int(max_floor) / int(section_length))
+            id_of_allocated = self.building.elevators[index_to_allocate].id
+            return id_of_allocated
+
+
