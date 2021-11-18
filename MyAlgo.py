@@ -213,6 +213,8 @@ class MyAlgo:
     #     return ind_of_elev
 
     def allocate_an_elevator(self, call):
+        if len(self.building.elevators) == 1:
+            return 0
         call_type = 1 if call.src < call.dest else -1
         src_floor = call.src
         dest_floor = call.dest
