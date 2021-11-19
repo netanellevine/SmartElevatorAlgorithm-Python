@@ -84,6 +84,4 @@ Reader --> Calls
 Reader --> Building
 Reader <--> Ex1_tester
 Reader <--> Ex1_main
-
-
 @endum
