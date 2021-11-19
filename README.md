@@ -63,3 +63,12 @@ pip install -r requirements.txt
 ```
 python Ex1_main.py <json_file> <csv_file>
 ```
+
+###Here are our results for the avarage waiting time:
+
+|           | **B1** | **B2** | **B3** | **B4** | **B5** |
+|-----------|--------|--------|--------|--------|--------|
+|**Calls_a**|	112.9	 | 42.2   |	44.2   | 36.9   |	26.7   |
+|**Calls_b**|		     |        | 412.6  | 170.1  |	71.5   |
+|**Calls_c**|		     |        | 420.8  | 157.2  |	64.7   |
+|**Calls_d**|		     |        | 408.3  | 168.3  |	66.8   |
