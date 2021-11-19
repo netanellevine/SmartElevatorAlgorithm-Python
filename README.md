@@ -46,7 +46,7 @@ Meaning we will go over the route of each elevator in the building and will choo
   
     
 ---
-![ELEV] (file:///C:/Users/netan/Smart%20Elevator%20UML.png)
+![ELEV](file:///C:/Users/netan/Smart%20Elevator%20UML.png)
 
 
 ## How to use:
