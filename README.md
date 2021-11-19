@@ -41,7 +41,7 @@ Meaning we will go over the route of each elevator in the building and will choo
 This will be done by calculating the floors in each route and dividing by the speed, then adding to the one with the lowest time to finish.
 However there will be an elevator which waits and picks up all the long calls and waits then travels again and again from top to bottom.
 
-4. Flag 2 will go from the fastest to reach the call and finish it. 
+4. Flag 2 will go from the fastest to reach the call and finish it. bla
 Meaning we will go over the route of each elevator in the building and will choose the elevator by which one will finish its route the fastest after adding the call.
   
     
@@ -49,7 +49,7 @@ Meaning we will go over the route of each elevator in the building and will choo
   
    
    <p align="center">
-    <img width="800" height="900" src="https://user-images.githubusercontent.com/74298433/141529107-3a273664-8d12-4cb6-88b6-4b2427c20cf9.png">
+    <img width="800" height="900" src="C:\Users\netan\PycharmProjects\Smart_Elevator_Algorithm_Ex1\Smart Elevator UML.png" title="Smart Elevator UML">
    </p>
 
 
