@@ -44,9 +44,24 @@ class Calls{
 }
 
 
-class Reader{}
-class Ex1_main{}
-class Ex1_tester{}
+class Reader{
++building_from_json(file_name)
++calls_from_CSV(file_name)
++write_to_csv(list_of_calls, file_name)
++read_calculate_write(building_file, calls_file, file_name="output.csv")
+}
+
+
+class Ex1_main{
++main()
+}
+
+
+class Ex1_tester{
++test_B3_B4_B5(self)
++test_B1_B2(self)
++test_dont_change_calls(self)
+}
 
 
 class MyAlgo {
@@ -67,7 +82,7 @@ MyAlgo --> Ex1_main
 MyAlgo --> Ex1_tester
 Reader --> Calls
 Reader --> Building
-Reader --> Ex1_tester
+Reader <--> Ex1_tester
 Reader <--> Ex1_main
 
 
