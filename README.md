@@ -65,8 +65,8 @@ python Ex1_main.py <json_file> <csv_file>
 ```
 
 ### Here are our results for the avarage waiting time:
-   **-B1...B5 represents each of the buildings we tested.**
-   **-Calls_a...Calls_d  represents each of the calls we tested.**
+   **- B1...B5 represents each of the buildings we tested.**
+   **- Calls_a...Calls_d  represents each of the calls we tested.**
 
 |           | **B1** | **B2** | **B3** | **B4** | **B5** |
 |-----------|--------|--------|--------|--------|--------|
