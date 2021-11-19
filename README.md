@@ -46,11 +46,7 @@ Meaning we will go over the route of each elevator in the building and will choo
   
     
 ---
-![]("C:\Users\netan\Smart Elevator UML.png "Smart Elevator UML"")
-   
-   <p align="center">
-    <img width="800" height="900" src="![Smart Elevator UML](https://user-images.githubusercontent.com/74298433/142627608-d2f9e7ea-25b0-4188-8e26-63ac07be7473.png)" title="Smart Elevator UML">
-   </p>
+![ELEV] (file:///C:/Users/netan/Smart%20Elevator%20UML.png)
 
 
 ## How to use:
