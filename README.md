@@ -49,7 +49,7 @@ Meaning we will go over the route of each elevator in the building and will choo
   
    
    <p align="center">
-    <img width="800" height="900" src="https://user-images.githubusercontent.com/74298433/141529107-3a273664-8d12-4cb6-88b6-4b2427c20cf9.png">
+    <img width="800" height="900" src="![Smart Elevator UML](https://user-images.githubusercontent.com/74298433/142622563-e4608bd5-5065-48a8-a52c-2b75879c1cb3.png)">
    </p>
 
 
